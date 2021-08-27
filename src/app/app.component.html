@@ -1,0 +1,42 @@
+<!-- we dont need the unnecessary things! so that i just removed them -->
+<!-- need to install angular cdk npm so that you can access the angular drag drop functionality. -->
+<!-- you just need to search on google angular drag drop then copy the html.cssand ts file -->
+<!-- when you copy the whole html code then it will shown the error you need to copy the ts file the paste it -->
+
+<!-- remember you need to import this on ts file "import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+  " -->
+
+  <!-- 1st example -->
+<!-- <div class="example-container">
+  <h2>To do</h2>
+
+  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
+    class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Done</h2>
+
+  <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+    class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+  </div>
+</div> -->
+
+<!-- ************************************2nd example******************* -->
+
+<!-- another drag drop example with image preview -->
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let movie of movies" cdkDrag>
+    {{movie.title}}
+    <img *cdkDragPreview [src]="movie.poster" [alt]="movie.title">
+  </div>
+</div>
+<!-- ************************************3rd example******************* -->
+
+<!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let timePeriod of timePeriods" cdkDrag>{{timePeriod}}</div>
+</div> -->
